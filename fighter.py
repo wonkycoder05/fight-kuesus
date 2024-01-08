@@ -126,7 +126,7 @@ class Fighter():
 
         #atk cd
         if self.atk_cd > 0:
-            self.atk_cd -= 1   
+            self.atk_cd -= 0.5   
 
 
         #updating positions
@@ -176,13 +176,13 @@ class Fighter():
             #if already attack:
                 if self.action == 0 or self.action == 1:
                     self.atking = False
-                    self.atk_cd = 10
+                    self.atk_cd = 50
             #check if dmg taken
                 if self.action == 5:
                     self.hit = False
                     #if player is in the middle of an atk its stops.
                     self.atking = False
-                    self.atk_cd = 10 
+                    self.atk_cd = 50 
         max_frames = len(self.animation_list[self.action])
         if max_frames > 0:
             self.frame_index %= max_frames  # Ensure frame index stays within range
